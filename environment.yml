@@ -1,0 +1,15 @@
+name: ngs-variant-calling
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.12
+  - openjdk=17
+  - fastqc=0.12.1
+  - bbmap=39.20
+  - bwa=0.7.17
+  - samtools=1.22
+  - bcftools=1.22
+  - htslib=1.22
+  - ensembl-vep=110.0

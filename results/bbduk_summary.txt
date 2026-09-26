@@ -1,0 +1,20 @@
+java -ea -Xmx2g -Xms2g -cp /usr/share/java/bbmap.jar jgi.BBDuk -Xmx2g in1=raw_data/proband_R1.fq.gz in2=raw_data/proband_R2.fq.gz out1=trimmed/proband_R1_trimmed.fq out2=trimmed/proband_R2_trimmed.fq qtrim=r trimq=20 minlen=50
+Executing jgi.BBDuk [-Xmx2g, in1=raw_data/proband_R1.fq.gz, in2=raw_data/proband_R2.fq.gz, out1=trimmed/proband_R1_trimmed.fq, out2=trimmed/proband_R2_trimmed.fq, qtrim=r, trimq=20, minlen=50]
+Version 39.20
+
+Allocating kmer table: 	0.014 seconds.
+Initial:
+Memory: max=2147m, total=2147m, free=2127m, used=20m
+
+Input is being processed as paired
+Started output streams:	0.218 seconds.
+Processing time:   		10.572 seconds.
+
+Input:                  	4785108 reads 		483295908 bases.
+QTrimmed:               	1176212 reads (24.58%) 	62040410 bases (12.84%)
+Total Removed:          	517160 reads (10.81%) 	62040410 bases (12.84%)
+Result:                 	4267948 reads (89.19%) 	421255498 bases (87.16%)
+
+Time:                         	10.798 seconds.
+Reads Processed:       4785k 	443.16k reads/sec
+Bases Processed:        483m 	44.76m bases/sec

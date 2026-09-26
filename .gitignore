@@ -1,0 +1,15 @@
+# Large input and intermediate data
+/raw_data/
+/trimmed/
+/aligned/
+/reference/
+
+# Keep compact reports and final calls; ignore bulky generated QC assets
+/qc_reports/*_fastqc/
+/qc_reports/*_trimmed_fastqc/
+/qc_reports/*.html
+
+# Temporary and compressed variant-call intermediates
+/results/*.tmp
+/results/*.vcf.gz
+/results/*.vcf.gz.csi
