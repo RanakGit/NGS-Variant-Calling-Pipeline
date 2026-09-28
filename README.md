@@ -7,7 +7,6 @@
 
 An end-to-end, reproducible short-read variant-calling pipeline, applied to a real published **trio exome** (proband, father, mother) from a consanguineous family in which the child has **osteopetrosis**. Raw FASTQ reads go in; a single, independently verified candidate variant comes out.
 
-**Project website:** https://ranakgit.github.io/NGS-Variant-Calling-Pipeline/
 
 ## Key result
 
