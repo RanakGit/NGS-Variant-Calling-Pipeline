@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NGS Variant Calling Pipeline</title>
+  <meta name="description" content="Reproducible short-read variant calling pipeline for a trio exome osteopetrosis case study.">
+  <style>
+    :root { color-scheme: light dark; --accent: #2f81f7; --muted: #57606a; --panel: #f6f8fa; }
+    body { font: 16px/1.6 system-ui, sans-serif; margin: 0; color: #24292f; background: #fff; }
+    main { max-width: 960px; margin: auto; padding: 3rem 1.25rem; }
+    h1, h2 { line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin-bottom: .5rem; }
+    h2 { margin-top: 2.5rem; }
+    a { color: var(--accent); }
+    .lead { color: var(--muted); font-size: 1.15rem; }
+    .card { background: var(--panel); border-radius: 10px; padding: 1rem 1.25rem; }
+    code { background: var(--panel); border-radius: 4px; padding: .1rem .3rem; }
+    pre { overflow-x: auto; padding: 1rem; border-radius: 8px; background: #161b22; color: #e6edf3; }
+    li { margin: .35rem 0; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e6edf3; background: #0d1117; }
+      .lead, :root { --muted: #8b949e; --panel: #161b22; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>NGS Variant Calling Pipeline</h1>
+    <p class="lead">An end-to-end, reproducible short-read variant-calling workflow using real trio exome data for an osteopetrosis case study.</p>
+
+    <div class="card">
+      <strong>Reference:</strong> hg19/GRCh37 chromosome 8<br>
+      <strong>Samples:</strong> father, mother, and proband<br>
+      <strong>Workflow:</strong> download → QC → trimming → alignment → BAM processing → variant calling → filtering and annotation
+    </div>
+
+    <h2>Pipeline steps</h2>
+    <ol>
+      <li><code>01_download_data.sh</code> — download FASTQ files and the chromosome 8 reference.</li>
+      <li><code>02_qc.sh</code> — generate FastQC reports.</li>
+      <li><code>03_trim.sh</code> — trim low-quality read ends with BBDuk.</li>
+      <li><code>04_align.sh</code> — align reads with BWA-MEM.</li>
+      <li><code>05_process_bam.sh</code> — sort, mark duplicates, and index BAM files.</li>
+      <li><code>06_call_variants.sh</code> — call variants with bcftools.</li>
+      <li><code>07_filter_annotate.sh</code> — filter candidates and optionally annotate them with VEP.</li>
+    </ol>
+
+    <h2>Run the workflow</h2>
+    <p>Install the pinned Conda environment, activate it, then run the numbered scripts from the project root:</p>
+    <pre><code>conda env create -f environment.yml
+conda activate ngs-variant-calling
+for script in scripts/0*.sh; do bash "$script"; done</code></pre>
+
+    <h2>Results</h2>
+    <ul>
+      <li><a href="../results/screenshots/README.md">FastQC screenshot gallery</a></li>
+      <li><a href="../results/bbduk_summary.txt">BBDuk trimming summary</a></li>
+      <li><a href="../results/flagstat_proband.txt">Proband alignment statistics</a></li>
+      <li><a href="../results/proband_CA2_candidates.vcf">Candidate variants</a></li>
+      <li><a href="../results/vep_results.txt">VEP annotation status</a></li>
+    </ul>
+
+    <p><a href="https://github.com/RanakGit/NGS-Variant-Calling-Pipeline">View the source repository on GitHub</a></p>
+  </main>
+</body>
+</html>
