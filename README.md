@@ -7,8 +7,13 @@ Reproducible short-read variant calling for a father, mother, and proband trio, 
 - `scripts/`: numbered pipeline steps; run them from any working directory.
 - `raw_data/`, `trimmed/`, `aligned/`, `reference/`: pipeline inputs and intermediate files (ignored by Git).
 - `qc_reports/`: FastQC reports.
+- `results/screenshots/`: ordered FastQC charts showing proband read quality before and after trimming.
 - `results/`: compact outputs suitable for review and version control.
 - `environment.yml`: Conda environment with pinned tool versions.
+
+## Screenshot walkthrough
+
+The [QC screenshot gallery](results/screenshots/README.md) follows the proband reads through raw-read and post-trimming quality checks. Each chart shows per-base Phred quality across read positions; the matching R1 and R2 plots make the before/after comparison easy to follow. The gallery contains aggregate QC plots, not sequencing reads or alignments.
 
 The current workspace already has `raw_data/`, `trimmed/`, `aligned/`, `reference/`, and `qc_reports/` beside this project folder. Scripts use those sibling folders by default and keep compact deliverables inside this project's `results/` directory. Set `DATA_ROOT` to another data directory when using a different layout.
 
