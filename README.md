@@ -1,5 +1,9 @@
 # NGS Variant-Calling Pipeline: Tracing a Child's Osteopetrosis to a Single Mutation in *CA2*
 
+## Project Summary
+
+This end-to-end bioinformatics pipeline demonstrates how to identify disease-causing genetic mutations in exome sequencing data. Using a real clinical case (osteopetrosis), this project performs quality control, alignment, variant calling, and functional annotation to trace a child's rare genetic disorder to a single mutation in the CA2 gene.
+
 ![Genome build](https://img.shields.io/badge/genome-hg19%20%2F%20GRCh37-1f6f64)
 ![Scope](https://img.shields.io/badge/scope-chr8%20trio%20exome-b8792f)
 ![Shell](https://img.shields.io/badge/pipeline-Bash%20%2B%20Conda-4b5563)
